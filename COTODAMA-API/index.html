@@ -3,8 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
 </head>
 <body>
     <p>あいうえお</p>
+
+    <script>
+        var postdata = {
+            "MemberId": "1",
+            "MemberFirstName": "山田",
+            "MemberPref": "北海道",
+            "MemberAddress": "札幌市北区篠路4条2丁目11-7",
+            "MemberPostNumber": "002-8024",
+            "MemberPhone": "090-4877-6561",
+            "MemberBirth": "1996-11-06",
+            "MemberFirstName": "小川",
+            "MemberLastName": "巧真",
+            "MemberFirstNameKana": "おがわ",
+            "MemberLastNameKana": "たくま",
+            "CompanyName": "北陸トスバック",
+            "CompanyPostNumber": "930-0087",
+            "CompanyAddress": "富山県富山市安野屋町3-4-20",
+            "BankNumber": "1111",
+            "BankBranchNumber": "1",
+            "BankAccountNumber": "11110000",
+            "HundleName": "UnlieSky",
+            "BankAccountName": "普通",
+            "IconFilepath": "/Icon",
+
+        };
+        $.ajax({
+            type:"POST",
+            url: "api/Members/RegisterMember",
+            data: postdata,
+            success: function (data) {
+                console.log(data);
+                return data;
+            }
+        });
+    </script>
 </body>
 </html>
