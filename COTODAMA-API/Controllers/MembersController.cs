@@ -11,28 +11,21 @@ namespace COTODAMA_API.Controllers
     public class MembersController : ApiController
         {
 
-        private COTODAMAContext db = new COTODAMAContext();
+        private cotodamaEntities db = new cotodamaEntities();
 
         [HttpPost]
-        public Boolean RegisterMember([FromBody] Member member)
+        public Boolean RegisterMember([FromBody] M_Member member)
         {
-            try
-            {
                 member.RegisterDateTime = DateTime.UtcNow.AddHours(9);
                 member.EditDateTime = DateTime.UtcNow.AddHours(9);
 
-                db.Members.Add(member);
+                db.M_Member.Add(member);
 
                 db.SaveChanges();
 
                 return true;
 
-            }
-            catch
-            {
-                return false;
-
-            }
+     
         }
 
         }

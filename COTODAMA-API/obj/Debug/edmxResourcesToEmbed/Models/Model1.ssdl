@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cotodamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemId" Type="nvarchar(max)" />
+    <Property Name="ItemName" Type="nvarchar(max)" />
+    <Property Name="ItemDiscription" Type="nvarchar(max)" />
+    <Property Name="ItemPriceUnit" Type="int" Nullable="false" />
+    <Property Name="ItemLengthMin" Type="int" Nullable="false" />
+    <Property Name="ItemLengthMax" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="ItemDeliveryDate" Type="datetime" />
+    <Property Name="ItemStock" Type="int" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+警告 6002: テーブル/ビュー 'cotodama.dbo.M_Category' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。-->
+  <EntityType Name="M_Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="RegisterDateTime" />
+      <PropertyRef Name="EditDateTime" />
+    </Key>
+    <Property Name="CategoryId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ItemId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDiscription" Type="nvarchar(max)" />
+    <Property Name="ItemPriceUnit" Type="int" Nullable="false" />
+    <Property Name="ItemLengthMin" Type="int" />
+    <Property Name="ItemLengthMax" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ItemDeliveryDate" Type="int" />
+    <Property Name="ItemStock" Type="int" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_Member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="MemberId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberPref" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberBirth" Type="date" Nullable="false" />
+    <Property Name="MemberFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberFirstNameKana" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberLastNameKana" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="CompanyPostNumber" Type="nvarchar(max)" />
+    <Property Name="CompanyAddress" Type="nvarchar(max)" />
+    <Property Name="MemberPostNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankNumber" Type="nvarchar(max)" />
+    <Property Name="BankBranchNumber" Type="nvarchar(max)" />
+    <Property Name="BankAccountNumber" Type="nvarchar(max)" />
+    <Property Name="HundleName" Type="nvarchar(max)" />
+    <Property Name="BankAccountName" Type="nvarchar(max)" />
+    <Property Name="IconFilepath" Type="nvarchar(max)" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberId" Type="nvarchar(max)" />
+    <Property Name="MemberPref" Type="nvarchar(max)" />
+    <Property Name="MemberAddress" Type="nvarchar(max)" />
+    <Property Name="MemberPostNumber" Type="nvarchar(max)" />
+    <Property Name="MemberPhone" Type="nvarchar(max)" />
+    <Property Name="MemberBirth" Type="datetime" Nullable="false" />
+    <Property Name="MemberFirstName" Type="nvarchar(max)" />
+    <Property Name="MemberLastName" Type="nvarchar(max)" />
+    <Property Name="MemberFirstNameKana" Type="nvarchar(max)" />
+    <Property Name="MemberLastNameKana" Type="nvarchar(max)" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="CompanyPostNumber" Type="nvarchar(max)" />
+    <Property Name="CompanyAddress" Type="nvarchar(max)" />
+    <Property Name="BankNumber" Type="nvarchar(max)" />
+    <Property Name="BankBranchNumber" Type="nvarchar(max)" />
+    <Property Name="BankAccountNumber" Type="nvarchar(max)" />
+    <Property Name="HundleName" Type="nvarchar(max)" />
+    <Property Name="BankAccountName" Type="nvarchar(max)" />
+    <Property Name="IconFilepath" Type="nvarchar(max)" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+警告 6002: テーブル/ビュー 'cotodama.dbo.T_Order' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。-->
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ItemId" />
+      <PropertyRef Name="ItemFilePath" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="TalentName" />
+      <PropertyRef Name="TotalPrice" />
+      <PropertyRef Name="OrderLengthTime" />
+      <PropertyRef Name="CheckFlag" />
+      <PropertyRef Name="UnlockFlag" />
+      <PropertyRef Name="RegisterDateTime" />
+      <PropertyRef Name="EditDateTime" />
+    </Key>
+    <Property Name="OrderId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="ItemFilePath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TalentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalPrice" Type="int" Nullable="false" />
+    <Property Name="OrderLengthTime" Type="int" Nullable="false" />
+    <Property Name="OrderFreeTextArea" Type="nvarchar(max)" />
+    <Property Name="CheckFlag" Type="bit" Nullable="false" />
+    <Property Name="UserRating" Type="nvarchar(max)" />
+    <Property Name="TalentRating" Type="nvarchar(max)" />
+    <Property Name="UnlockFlag" Type="bit" Nullable="false" />
+    <Property Name="CheckDatetime" Type="datetime" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="cotodamaModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Item" EntityType="Self.M_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Member" EntityType="Self.M_Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Category" EntityType="Self.M_Category" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_Category].[CategoryId] AS [CategoryId], 
+    [M_Category].[ID] AS [ID], 
+    [M_Category].[CategoryName] AS [CategoryName], 
+    [M_Category].[RegisterDateTime] AS [RegisterDateTime], 
+    [M_Category].[EditDateTime] AS [EditDateTime]
+    FROM [dbo].[M_Category] AS [M_Category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="T_Order" EntityType="Self.T_Order" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [T_Order].[OrderId] AS [OrderId], 
+    [T_Order].[ID] AS [ID], 
+    [T_Order].[ItemId] AS [ItemId], 
+    [T_Order].[ItemFilePath] AS [ItemFilePath], 
+    [T_Order].[MemberId] AS [MemberId], 
+    [T_Order].[UserName] AS [UserName], 
+    [T_Order].[TalentName] AS [TalentName], 
+    [T_Order].[TotalPrice] AS [TotalPrice], 
+    [T_Order].[OrderLengthTime] AS [OrderLengthTime], 
+    [T_Order].[OrderFreeTextArea] AS [OrderFreeTextArea], 
+    [T_Order].[CheckFlag] AS [CheckFlag], 
+    [T_Order].[UserRating] AS [UserRating], 
+    [T_Order].[TalentRating] AS [TalentRating], 
+    [T_Order].[UnlockFlag] AS [UnlockFlag], 
+    [T_Order].[CheckDatetime] AS [CheckDatetime], 
+    [T_Order].[RegisterDateTime] AS [RegisterDateTime], 
+    [T_Order].[EditDateTime] AS [EditDateTime]
+    FROM [dbo].[T_Order] AS [T_Order]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cotodamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPriceUnit" Type="Int32" Nullable="false" />
+    <Property Name="ItemLengthMin" Type="Int32" Nullable="false" />
+    <Property Name="ItemLengthMax" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="ItemDeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="ItemStock" Type="Int32" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ItemId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPriceUnit" Type="Int32" Nullable="false" />
+    <Property Name="ItemLengthMin" Type="Int32" />
+    <Property Name="ItemLengthMax" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="ItemDeliveryDate" Type="Int32" />
+    <Property Name="ItemStock" Type="Int32" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_Member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="MemberId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberPref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MemberFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberFirstNameKana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberLastNameKana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPostNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberPostNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BankNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankBranchNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankAccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HundleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankAccountName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IconFilepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberPref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberPostNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MemberFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberFirstNameKana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberLastNameKana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyPostNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankBranchNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankAccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HundleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BankAccountName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IconFilepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="M_Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="RegisterDateTime" />
+      <PropertyRef Name="EditDateTime" />
+    </Key>
+    <Property Name="CategoryId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ItemId" />
+      <PropertyRef Name="ItemFilePath" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="TalentName" />
+      <PropertyRef Name="TotalPrice" />
+      <PropertyRef Name="OrderLengthTime" />
+      <PropertyRef Name="CheckFlag" />
+      <PropertyRef Name="UnlockFlag" />
+      <PropertyRef Name="RegisterDateTime" />
+      <PropertyRef Name="EditDateTime" />
+    </Key>
+    <Property Name="OrderId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="ItemFilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TalentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalPrice" Type="Int32" Nullable="false" />
+    <Property Name="OrderLengthTime" Type="Int32" Nullable="false" />
+    <Property Name="OrderFreeTextArea" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CheckFlag" Type="Boolean" Nullable="false" />
+    <Property Name="UserRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TalentRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UnlockFlag" Type="Boolean" Nullable="false" />
+    <Property Name="CheckDatetime" Type="DateTime" Precision="3" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="cotodamaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Items" EntityType="Self.Items" />
+    <EntitySet Name="M_Item" EntityType="Self.M_Item" />
+    <EntitySet Name="M_Member" EntityType="Self.M_Member" />
+    <EntitySet Name="Members" EntityType="Self.Members" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="M_Category" EntityType="Self.M_Category" />
+    <EntitySet Name="T_Order" EntityType="Self.T_Order" />
+  </EntityContainer>
+</Schema>
