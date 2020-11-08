@@ -14,10 +14,10 @@ namespace COTODAMA_API.Models
     
     public partial class M_Category
     {
-        public string CategoryId { get; set; }
         public int ID { get; set; }
         public string CategoryName { get; set; }
         public System.DateTime RegisterDateTime { get; set; }
         public System.DateTime EditDateTime { get; set; }
+        public string CategoryID { get; set; }
     }
 }

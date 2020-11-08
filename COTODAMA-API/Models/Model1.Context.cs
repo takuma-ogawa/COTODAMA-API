@@ -26,12 +26,13 @@ namespace COTODAMA_API.Models
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<Items> Items { get; set; }
         public virtual DbSet<M_Item> M_Item { get; set; }
         public virtual DbSet<M_Member> M_Member { get; set; }
-        public virtual DbSet<Members> Members { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<M_Category> M_Category { get; set; }
         public virtual DbSet<T_Order> T_Order { get; set; }
+        public virtual DbSet<T_Sample> T_Sample { get; set; }
+        public virtual DbSet<T_QuestionOfItem> T_QuestionOfItem { get; set; }
+        public virtual DbSet<T_QuestionOfOrder> T_QuestionOfOrder { get; set; }
     }
 }

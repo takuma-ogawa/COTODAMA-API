@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="cotodamaEntities-Web.config Connection String" description="cotodamaEntities データベースに接続するためにアプリケーションによって web.config で使用される接続文字列。" defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=cotodama.database.windows.net;initial catalog=cotodama;user id=cotodama;password=Tamakiharu9030;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\takum\\Documents\\hokuriku_tosbac\\Cotodama\\project\\COTODAMA-API\\COTODAMA-API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cotodamaEntities']/@connectionString" />
+  </parameter>
+</parameters>

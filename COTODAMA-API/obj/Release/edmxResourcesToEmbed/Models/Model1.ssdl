@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cotodamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CategoryID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDiscription" Type="nvarchar(max)" />
+    <Property Name="ItemPriceUnit" Type="int" Nullable="false" />
+    <Property Name="ItemLengthMin" Type="int" />
+    <Property Name="ItemLengthMax" Type="int" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="ItemDeliveryDate" Type="int" />
+    <Property Name="ItemStock" Type="int" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+    <Property Name="MemberID" Type="int" Nullable="false" />
+    <Property Name="MemberName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberPref" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberBirth" Type="date" Nullable="false" />
+    <Property Name="MemberFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberFirstNameKana" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberLastNameKana" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemberEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="CompanyPostNumber" Type="nvarchar(max)" />
+    <Property Name="CompanyAddress" Type="nvarchar(max)" />
+    <Property Name="MemberPostNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankNumber" Type="nvarchar(max)" />
+    <Property Name="BankBranchNumber" Type="nvarchar(max)" />
+    <Property Name="BankAccountNumber" Type="nvarchar(max)" />
+    <Property Name="HundleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankAccountName" Type="nvarchar(max)" />
+    <Property Name="IconFilepath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TokenID" Type="nvarchar(max)" />
+    <Property Name="TalentComment" Type="nvarchar(max)" />
+    <Property Name="TwitterURL" Type="nvarchar(max)" />
+    <Property Name="InstaURL" Type="nvarchar(max)" />
+    <Property Name="FBURL" Type="nvarchar(max)" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="IsSeller" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="OrderID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemFilePath" Type="nvarchar(max)" />
+    <Property Name="SellerID" Type="int" Nullable="false" />
+    <Property Name="OrdererID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TalentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalPrice" Type="int" Nullable="false" />
+    <Property Name="OrderLengthTime" Type="int" Nullable="false" />
+    <Property Name="OrderFreeTextArea" Type="nvarchar(max)" />
+    <Property Name="CheckFlag" Type="bit" Nullable="false" />
+    <Property Name="UserRating" Type="nvarchar(max)" />
+    <Property Name="TalentRating" Type="nvarchar(max)" />
+    <Property Name="UnlockFlag" Type="bit" Nullable="false" />
+    <Property Name="CheckDatetime" Type="datetime" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_QuestionOfItem">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SortID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="MemberID" Type="int" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_QuestionOfOrder">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AnswerName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="SellerID" Type="int" Nullable="false" />
+    <Property Name="OrdererID" Type="int" Nullable="false" />
+    <Property Name="SortID" Type="int" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Sample">
+    <Key>
+      <PropertyRef Name="SampleID" />
+    </Key>
+    <Property Name="SampleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberID" Type="int" Nullable="false" />
+    <Property Name="SampleFilePath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VisibleFlag" Type="bit" Nullable="false" />
+    <Property Name="SampleName" Type="nvarchar(max)" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="cotodamaModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Item" EntityType="Self.M_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Member" EntityType="Self.M_Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_QuestionOfItem" EntityType="Self.T_QuestionOfItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_QuestionOfOrder" EntityType="Self.T_QuestionOfOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Sample" EntityType="Self.T_Sample" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

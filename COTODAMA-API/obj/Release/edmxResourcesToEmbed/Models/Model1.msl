@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cotodamaModelStoreContainer" CdmEntityContainer="cotodamaEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="cotodamaModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Item">
+      <EntityTypeMapping TypeName="cotodamaModel.M_Item">
+        <MappingFragment StoreEntitySet="M_Item">
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemDiscription" ColumnName="ItemDiscription" />
+          <ScalarProperty Name="ItemPriceUnit" ColumnName="ItemPriceUnit" />
+          <ScalarProperty Name="ItemLengthMin" ColumnName="ItemLengthMin" />
+          <ScalarProperty Name="ItemLengthMax" ColumnName="ItemLengthMax" />
+          <ScalarProperty Name="ItemDeliveryDate" ColumnName="ItemDeliveryDate" />
+          <ScalarProperty Name="ItemStock" ColumnName="ItemStock" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Member">
+      <EntityTypeMapping TypeName="cotodamaModel.M_Member">
+        <MappingFragment StoreEntitySet="M_Member">
+          <ScalarProperty Name="IsSeller" ColumnName="IsSeller" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MemberEmail" ColumnName="MemberEmail" />
+          <ScalarProperty Name="FBURL" ColumnName="FBURL" />
+          <ScalarProperty Name="InstaURL" ColumnName="InstaURL" />
+          <ScalarProperty Name="TwitterURL" ColumnName="TwitterURL" />
+          <ScalarProperty Name="TalentComment" ColumnName="TalentComment" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberPref" ColumnName="MemberPref" />
+          <ScalarProperty Name="MemberAddress" ColumnName="MemberAddress" />
+          <ScalarProperty Name="MemberPhone" ColumnName="MemberPhone" />
+          <ScalarProperty Name="MemberBirth" ColumnName="MemberBirth" />
+          <ScalarProperty Name="MemberFirstName" ColumnName="MemberFirstName" />
+          <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />
+          <ScalarProperty Name="MemberFirstNameKana" ColumnName="MemberFirstNameKana" />
+          <ScalarProperty Name="MemberLastNameKana" ColumnName="MemberLastNameKana" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyPostNumber" ColumnName="CompanyPostNumber" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="MemberPostNumber" ColumnName="MemberPostNumber" />
+          <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+          <ScalarProperty Name="BankBranchNumber" ColumnName="BankBranchNumber" />
+          <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+          <ScalarProperty Name="HundleName" ColumnName="HundleName" />
+          <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
+          <ScalarProperty Name="IconFilepath" ColumnName="IconFilepath" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="cotodamaModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Category">
+      <EntityTypeMapping TypeName="cotodamaModel.M_Category">
+        <MappingFragment StoreEntitySet="M_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Order">
+      <EntityTypeMapping TypeName="cotodamaModel.T_Order">
+        <MappingFragment StoreEntitySet="T_Order">
+          <ScalarProperty Name="OrdererID" ColumnName="OrdererID" />
+          <ScalarProperty Name="SellerID" ColumnName="SellerID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ItemFilePath" ColumnName="ItemFilePath" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="TalentName" ColumnName="TalentName" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="OrderLengthTime" ColumnName="OrderLengthTime" />
+          <ScalarProperty Name="OrderFreeTextArea" ColumnName="OrderFreeTextArea" />
+          <ScalarProperty Name="CheckFlag" ColumnName="CheckFlag" />
+          <ScalarProperty Name="UserRating" ColumnName="UserRating" />
+          <ScalarProperty Name="TalentRating" ColumnName="TalentRating" />
+          <ScalarProperty Name="UnlockFlag" ColumnName="UnlockFlag" />
+          <ScalarProperty Name="CheckDatetime" ColumnName="CheckDatetime" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Sample">
+      <EntityTypeMapping TypeName="cotodamaModel.T_Sample">
+        <MappingFragment StoreEntitySet="T_Sample">
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="SampleName" ColumnName="SampleName" />
+          <ScalarProperty Name="VisibleFlag" ColumnName="VisibleFlag" />
+          <ScalarProperty Name="SampleFilePath" ColumnName="SampleFilePath" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_QuestionOfItem">
+      <EntityTypeMapping TypeName="cotodamaModel.T_QuestionOfItem">
+        <MappingFragment StoreEntitySet="T_QuestionOfItem">
+          <ScalarProperty Name="SortID" ColumnName="SortID" />
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="QuestionName" ColumnName="QuestionName" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_QuestionOfOrder">
+      <EntityTypeMapping TypeName="cotodamaModel.T_QuestionOfOrder">
+        <MappingFragment StoreEntitySet="T_QuestionOfOrder">
+          <ScalarProperty Name="OrdererID" ColumnName="OrdererID" />
+          <ScalarProperty Name="SellerID" ColumnName="SellerID" />
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="SortID" ColumnName="SortID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="AnswerName" ColumnName="AnswerName" />
+          <ScalarProperty Name="QuestionName" ColumnName="QuestionName" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

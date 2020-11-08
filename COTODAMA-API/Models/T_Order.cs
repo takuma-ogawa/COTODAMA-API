@@ -14,11 +14,8 @@ namespace COTODAMA_API.Models
     
     public partial class T_Order
     {
-        public string OrderId { get; set; }
         public int ID { get; set; }
-        public int ItemId { get; set; }
         public string ItemFilePath { get; set; }
-        public int MemberId { get; set; }
         public string UserName { get; set; }
         public string TalentName { get; set; }
         public int TotalPrice { get; set; }
@@ -31,5 +28,9 @@ namespace COTODAMA_API.Models
         public Nullable<System.DateTime> CheckDatetime { get; set; }
         public System.DateTime RegisterDateTime { get; set; }
         public System.DateTime EditDateTime { get; set; }
+        public string OrderID { get; set; }
+        public int ItemID { get; set; }
+        public int SellerID { get; set; }
+        public int OrdererID { get; set; }
     }
 }

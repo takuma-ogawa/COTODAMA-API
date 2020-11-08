@@ -14,8 +14,6 @@ namespace COTODAMA_API.Models
     
     public partial class M_Member
     {
-        public string MemberId { get; set; }
-        public int ID { get; set; }
         public string MemberPref { get; set; }
         public string MemberAddress { get; set; }
         public string MemberPhone { get; set; }
@@ -36,5 +34,15 @@ namespace COTODAMA_API.Models
         public string IconFilepath { get; set; }
         public System.DateTime RegisterDateTime { get; set; }
         public System.DateTime EditDateTime { get; set; }
+        public int MemberID { get; set; }
+        public string TokenID { get; set; }
+        public string TalentComment { get; set; }
+        public string TwitterURL { get; set; }
+        public string InstaURL { get; set; }
+        public string FBURL { get; set; }
+        public string MemberEmail { get; set; }
+        public string Password { get; set; }
+        public int ItemID { get; set; }
+        public bool IsSeller { get; set; }
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26c698a59d774dd5a31a807a4d7ba652" Name="Diagram1">
+        <EntityTypeShape EntityType="cotodamaModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cotodamaModel.M_Item" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cotodamaModel.M_Member" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cotodamaModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cotodamaModel.M_Category" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cotodamaModel.T_Order" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cotodamaModel.T_Sample" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="cotodamaModel.T_QuestionOfItem" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="cotodamaModel.T_QuestionOfOrder" Width="1.5" PointX="3.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
