@@ -34,18 +34,6 @@ namespace COTODAMA_API.Repository
 
         public static M_Member Edit(this M_Member old,M_Member edit)
         {
-            old.MemberPref = edit.MemberPref;
-            old.MemberAddress = edit.MemberAddress;
-            old.MemberPhone = edit.MemberPhone;
-            old.MemberBirth = edit.MemberBirth;
-            old.MemberFirstName = edit.MemberFirstName;
-            old.MemberLastName = edit.MemberLastName;
-            old.MemberFirstNameKana = edit.MemberFirstNameKana;
-            old.MemberLastNameKana = edit.MemberLastNameKana;
-            old.CompanyName = edit.CompanyName;
-            old.CompanyPostNumber = edit.CompanyPostNumber;
-            old.CompanyAddress = edit.CompanyAddress;
-            old.MemberPostNumber = edit.MemberPostNumber;
             old.BankNumber = edit.BankNumber;
             old.BankBranchNumber = edit.BankBranchNumber;
             old.BankAccountNumber = edit.BankAccountNumber;

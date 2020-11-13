@@ -35,31 +35,8 @@ namespace COTODAMA_API.Service
             }
 
         }
-
-        public Boolean EditMember(M_Member edit)
-        {
-            try
-            {
-
-                var member = db.M_Member.Find(edit.MemberID).Edit(edit);
-                db.Entry(member).State = EntityState.Modified;
-
-
-                //メンバーのハンドルネームが変わったときItemのMemberNameも変える
-                var item = db.M_Item.Find(edit.ItemID).EditByMemberName(edit.HundleName);
-                db.Entry(item).State = EntityState.Modified;
-
-
-                db.SaveChanges();
-
-                return true;
-
-            }
-            catch
-            {
-                return false;
-            }
-
-        }
+        
+      
+        
     }
 }

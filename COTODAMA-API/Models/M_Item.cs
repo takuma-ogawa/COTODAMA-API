@@ -14,17 +14,14 @@ namespace COTODAMA_API.Models
     
     public partial class M_Item
     {
-        public int ID { get; set; }
         public string ItemName { get; set; }
         public string ItemDiscription { get; set; }
         public int ItemPriceUnit { get; set; }
-        public Nullable<int> ItemLengthMin { get; set; }
-        public Nullable<int> ItemLengthMax { get; set; }
         public Nullable<int> ItemDeliveryDate { get; set; }
         public Nullable<int> ItemStock { get; set; }
         public System.DateTime RegisterDateTime { get; set; }
         public System.DateTime EditDateTime { get; set; }
-        public string ItemID { get; set; }
+        public int ItemID { get; set; }
         public Nullable<int> CategoryID { get; set; }
         public int MemberID { get; set; }
         public string MemberName { get; set; }

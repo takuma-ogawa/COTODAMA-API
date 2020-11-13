@@ -22,15 +22,12 @@
   </EntityType>
   <EntityType Name="M_Item">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="ItemID" />
     </Key>
-    <Property Name="ItemID" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="None" Nullable="false" />
     <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ItemDiscription" Type="nvarchar(max)" />
     <Property Name="ItemPriceUnit" Type="int" Nullable="false" />
-    <Property Name="ItemLengthMin" Type="int" />
-    <Property Name="ItemLengthMax" Type="int" />
     <Property Name="CategoryID" Type="int" />
     <Property Name="ItemDeliveryDate" Type="int" />
     <Property Name="ItemStock" Type="int" />
@@ -44,25 +41,14 @@
       <PropertyRef Name="MemberID" />
     </Key>
     <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MemberPref" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MemberAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MemberPhone" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MemberBirth" Type="date" Nullable="false" />
-    <Property Name="MemberFirstName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MemberLastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MemberFirstNameKana" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MemberLastNameKana" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MemberEmail" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CompanyName" Type="nvarchar(max)" />
-    <Property Name="CompanyPostNumber" Type="nvarchar(max)" />
-    <Property Name="CompanyAddress" Type="nvarchar(max)" />
-    <Property Name="MemberPostNumber" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BankNumber" Type="nvarchar(max)" />
     <Property Name="BankBranchNumber" Type="nvarchar(max)" />
     <Property Name="BankAccountNumber" Type="nvarchar(max)" />
-    <Property Name="HundleName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BankAccountName" Type="nvarchar(max)" />
+    <Property Name="HundleName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IconFilepath" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TokenID" Type="nvarchar(max)" />
     <Property Name="TalentComment" Type="nvarchar(max)" />
@@ -99,7 +85,10 @@
     <Property Name="TotalPrice" Type="int" Nullable="false" />
     <Property Name="OrderLengthTime" Type="int" Nullable="false" />
     <Property Name="OrderFreeTextArea" Type="nvarchar(max)" />
-    <Property Name="CheckFlag" Type="bit" Nullable="false" />
+    <Property Name="SellerCheckFlag" Type="bit" Nullable="false" />
+    <Property Name="OrdererCheckFlag" Type="bit" Nullable="false" />
+    <Property Name="IsDownloading" Type="bit" Nullable="false" />
+    <Property Name="IsAccepting" Type="bit" Nullable="false" />
     <Property Name="UserRating" Type="nvarchar(max)" />
     <Property Name="TalentRating" Type="nvarchar(max)" />
     <Property Name="UnlockFlag" Type="bit" Nullable="false" />
@@ -134,6 +123,23 @@
     <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
     <Property Name="EditDateTime" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="T_Sale">
+    <Key>
+      <PropertyRef Name="SaleID" />
+    </Key>
+    <Property Name="SaleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="OrdererID" Type="int" Nullable="false" />
+    <Property Name="SellerID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TalentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalPrice" Type="int" Nullable="false" />
+    <Property Name="OrderLengthTime" Type="int" Nullable="false" />
+    <Property Name="OrderFreeTextArea" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserRating" Type="nvarchar(max)" />
+    <Property Name="TalentRating" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="T_Sample">
     <Key>
       <PropertyRef Name="SampleID" />
@@ -155,6 +161,7 @@
     <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_QuestionOfItem" EntityType="Self.T_QuestionOfItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_QuestionOfOrder" EntityType="Self.T_QuestionOfOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Sale" EntityType="Self.T_Sale" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Sample" EntityType="Self.T_Sample" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

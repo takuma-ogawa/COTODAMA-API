@@ -29,7 +29,7 @@ namespace COTODAMA_API.Service
 
                 for(var i = 0; i < sell.Question.Count(); i++)
                 {
-                    var question = new QuestionOfItemRepository().AddByQuestionName(sell.Question[i], i,Item.MemberID, Item.ID);
+                    var question = new QuestionOfItemRepository().AddByQuestionName(sell.Question[i], i,Item.MemberID, Item.ItemID);
 
                     db.T_QuestionOfItem.Add(question);
                 }
@@ -53,7 +53,7 @@ namespace COTODAMA_API.Service
 
             try
             {
-                var item = db.M_Item.Find(sell.Item.ID).EditByItemClass(sell.Item) ;
+                var item = db.M_Item.Find(sell.Item.ItemID).EditByItemClass(sell.Item) ;
 
                 db.Entry(item).State = EntityState.Modified;
 
@@ -62,11 +62,11 @@ namespace COTODAMA_API.Service
                 for (var i = 0; i < sell.Question.Count(); i++)
                 {
 
-                    var question = db.T_QuestionOfItem.Where(r => r.ItemID == sell.Item.ID && r.SortID == i).SingleOrDefault();
+                    var question = db.T_QuestionOfItem.Where(r => r.ItemID == sell.Item.ItemID && r.SortID == i).SingleOrDefault();
 
                     if(question == null)
                     {
-                        question = new QuestionOfItemRepository().AddByQuestionName(sell.Question[i], i, item.MemberID, item.ID);
+                        question = new QuestionOfItemRepository().AddByQuestionName(sell.Question[i], i, item.MemberID, item.ItemID);
 
                         db.T_QuestionOfItem.Add(question);
                     }

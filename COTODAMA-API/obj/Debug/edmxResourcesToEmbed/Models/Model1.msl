@@ -18,12 +18,9 @@
           <ScalarProperty Name="MemberID" ColumnName="MemberID" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ItemName" ColumnName="ItemName" />
           <ScalarProperty Name="ItemDiscription" ColumnName="ItemDiscription" />
           <ScalarProperty Name="ItemPriceUnit" ColumnName="ItemPriceUnit" />
-          <ScalarProperty Name="ItemLengthMin" ColumnName="ItemLengthMin" />
-          <ScalarProperty Name="ItemLengthMax" ColumnName="ItemLengthMax" />
           <ScalarProperty Name="ItemDeliveryDate" ColumnName="ItemDeliveryDate" />
           <ScalarProperty Name="ItemStock" ColumnName="ItemStock" />
           <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
@@ -44,18 +41,7 @@
           <ScalarProperty Name="TalentComment" ColumnName="TalentComment" />
           <ScalarProperty Name="TokenID" ColumnName="TokenID" />
           <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-          <ScalarProperty Name="MemberPref" ColumnName="MemberPref" />
-          <ScalarProperty Name="MemberAddress" ColumnName="MemberAddress" />
-          <ScalarProperty Name="MemberPhone" ColumnName="MemberPhone" />
           <ScalarProperty Name="MemberBirth" ColumnName="MemberBirth" />
-          <ScalarProperty Name="MemberFirstName" ColumnName="MemberFirstName" />
-          <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />
-          <ScalarProperty Name="MemberFirstNameKana" ColumnName="MemberFirstNameKana" />
-          <ScalarProperty Name="MemberLastNameKana" ColumnName="MemberLastNameKana" />
-          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-          <ScalarProperty Name="CompanyPostNumber" ColumnName="CompanyPostNumber" />
-          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
-          <ScalarProperty Name="MemberPostNumber" ColumnName="MemberPostNumber" />
           <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
           <ScalarProperty Name="BankBranchNumber" ColumnName="BankBranchNumber" />
           <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
@@ -92,6 +78,10 @@
     <EntitySetMapping Name="T_Order">
       <EntityTypeMapping TypeName="cotodamaModel.T_Order">
         <MappingFragment StoreEntitySet="T_Order">
+          <ScalarProperty Name="IsAccepting" ColumnName="IsAccepting" />
+          <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+          <ScalarProperty Name="OrdererCheckFlag" ColumnName="OrdererCheckFlag" />
+          <ScalarProperty Name="SellerCheckFlag" ColumnName="SellerCheckFlag" />
           <ScalarProperty Name="OrdererID" ColumnName="OrdererID" />
           <ScalarProperty Name="SellerID" ColumnName="SellerID" />
           <ScalarProperty Name="ItemID" ColumnName="ItemID" />
@@ -103,7 +93,6 @@
           <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
           <ScalarProperty Name="OrderLengthTime" ColumnName="OrderLengthTime" />
           <ScalarProperty Name="OrderFreeTextArea" ColumnName="OrderFreeTextArea" />
-          <ScalarProperty Name="CheckFlag" ColumnName="CheckFlag" />
           <ScalarProperty Name="UserRating" ColumnName="UserRating" />
           <ScalarProperty Name="TalentRating" ColumnName="TalentRating" />
           <ScalarProperty Name="UnlockFlag" ColumnName="UnlockFlag" />
@@ -152,6 +141,24 @@
           <ScalarProperty Name="AnswerName" ColumnName="AnswerName" />
           <ScalarProperty Name="QuestionName" ColumnName="QuestionName" />
           <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Sale">
+      <EntityTypeMapping TypeName="cotodamaModel.T_Sale">
+        <MappingFragment StoreEntitySet="T_Sale">
+          <ScalarProperty Name="TalentRating" ColumnName="TalentRating" />
+          <ScalarProperty Name="UserRating" ColumnName="UserRating" />
+          <ScalarProperty Name="OrderFreeTextArea" ColumnName="OrderFreeTextArea" />
+          <ScalarProperty Name="OrderLengthTime" ColumnName="OrderLengthTime" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="TalentName" ColumnName="TalentName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SellerID" ColumnName="SellerID" />
+          <ScalarProperty Name="OrdererID" ColumnName="OrdererID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SaleID" ColumnName="SaleID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

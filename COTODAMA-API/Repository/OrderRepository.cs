@@ -25,8 +25,11 @@ namespace COTODAMA_API.Repository
             order.OrderID = "1";
             order.UserName = UserName;
             order.TalentName = TalentName;
-            order.CheckFlag = false;
             order.UnlockFlag = true;
+            order.IsAccepting = false;
+            order.IsDownloading = false;
+            order.OrdererCheckFlag = false;
+            order.SellerCheckFlag = false;
 
             order.RegisterDateTime = DateTime.UtcNow.AddHours(9);
             order.EditDateTime = DateTime.UtcNow.AddHours(9);

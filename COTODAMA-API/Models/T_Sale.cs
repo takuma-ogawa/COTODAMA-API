@@ -12,10 +12,13 @@ namespace COTODAMA_API.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Order
+    public partial class T_Sale
     {
-        public int ID { get; set; }
-        public string ItemFilePath { get; set; }
+        public int SaleID { get; set; }
+        public int OrderID { get; set; }
+        public int ItemID { get; set; }
+        public int OrdererID { get; set; }
+        public int SellerID { get; set; }
         public string UserName { get; set; }
         public string TalentName { get; set; }
         public int TotalPrice { get; set; }
@@ -23,18 +26,5 @@ namespace COTODAMA_API.Models
         public string OrderFreeTextArea { get; set; }
         public string UserRating { get; set; }
         public string TalentRating { get; set; }
-        public bool UnlockFlag { get; set; }
-        public Nullable<System.DateTime> CheckDatetime { get; set; }
-        public System.DateTime RegisterDateTime { get; set; }
-        public System.DateTime EditDateTime { get; set; }
-        public string OrderID { get; set; }
-        public int ItemID { get; set; }
-        public int SellerID { get; set; }
-        public int OrdererID { get; set; }
-        public bool SellerCheckFlag { get; set; }
-        public bool OrdererCheckFlag { get; set; }
-        public bool IsDownloading { get; set; }
-        public bool IsAccepting { get; set; }
-        public string CardToken { get; set; }
     }
 }

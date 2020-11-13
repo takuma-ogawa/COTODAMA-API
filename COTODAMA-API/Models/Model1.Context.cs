@@ -34,5 +34,6 @@ namespace COTODAMA_API.Models
         public virtual DbSet<T_Sample> T_Sample { get; set; }
         public virtual DbSet<T_QuestionOfItem> T_QuestionOfItem { get; set; }
         public virtual DbSet<T_QuestionOfOrder> T_QuestionOfOrder { get; set; }
+        public virtual DbSet<T_Sale> T_Sale { get; set; }
     }
 }

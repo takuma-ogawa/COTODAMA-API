@@ -14,18 +14,7 @@ namespace COTODAMA_API.Models
     
     public partial class M_Member
     {
-        public string MemberPref { get; set; }
-        public string MemberAddress { get; set; }
-        public string MemberPhone { get; set; }
         public System.DateTime MemberBirth { get; set; }
-        public string MemberFirstName { get; set; }
-        public string MemberLastName { get; set; }
-        public string MemberFirstNameKana { get; set; }
-        public string MemberLastNameKana { get; set; }
-        public string CompanyName { get; set; }
-        public string CompanyPostNumber { get; set; }
-        public string CompanyAddress { get; set; }
-        public string MemberPostNumber { get; set; }
         public string BankNumber { get; set; }
         public string BankBranchNumber { get; set; }
         public string BankAccountNumber { get; set; }

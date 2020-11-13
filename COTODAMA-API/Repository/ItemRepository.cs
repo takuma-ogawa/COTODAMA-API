@@ -14,15 +14,11 @@ namespace COTODAMA_API.Repository
         //会員登録時のアイテム作成
         public M_Item AddByMember(M_Member member)
         {
-            //※ItemIDの取り方を後で考える
             M_Item item = new M_Item
             {
-                ItemID = "1",
                 ItemName = "",
                 ItemDiscription = "",
                 ItemPriceUnit = 0,
-                ItemLengthMin = 0,
-                ItemLengthMax = 5,
                 CategoryID = null,
                 ItemDeliveryDate = null,
                 ItemStock = null,
@@ -52,9 +48,7 @@ namespace COTODAMA_API.Repository
             old.ItemName = edit.ItemName;
             old.ItemDiscription = edit.ItemDiscription;
             old.ItemPriceUnit = edit.ItemPriceUnit;
-            old.ItemLengthMin = edit.ItemLengthMin;
-            old.ItemLengthMax = edit.ItemLengthMax;
-            old.ItemDeliveryDate = edit.ItemDeliveryDate;
+             old.ItemDeliveryDate = edit.ItemDeliveryDate;
             old.ItemStock = edit.ItemStock;
             old.CategoryID = edit.CategoryID;
             old.EditDateTime = DateTime.UtcNow.AddHours(9);

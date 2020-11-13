@@ -12,19 +12,16 @@
   </EntityType>
   <EntityType Name="M_Item">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="ItemID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ItemDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ItemPriceUnit" Type="Int32" Nullable="false" />
-    <Property Name="ItemLengthMin" Type="Int32" />
-    <Property Name="ItemLengthMax" Type="Int32" />
     <Property Name="ItemDeliveryDate" Type="Int32" />
     <Property Name="ItemStock" Type="Int32" />
     <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ItemID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
     <Property Name="CategoryID" Type="Int32" />
     <Property Name="MemberID" Type="Int32" Nullable="false" />
     <Property Name="MemberName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -33,18 +30,7 @@
     <Key>
       <PropertyRef Name="MemberID" />
     </Key>
-    <Property Name="MemberPref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MemberAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MemberPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MemberBirth" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="MemberFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MemberLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MemberFirstNameKana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MemberLastNameKana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CompanyPostNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CompanyAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="MemberPostNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="BankNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="BankBranchNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="BankAccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -95,7 +81,6 @@
     <Property Name="TotalPrice" Type="Int32" Nullable="false" />
     <Property Name="OrderLengthTime" Type="Int32" Nullable="false" />
     <Property Name="OrderFreeTextArea" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CheckFlag" Type="Boolean" Nullable="false" />
     <Property Name="UserRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="TalentRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="UnlockFlag" Type="Boolean" Nullable="false" />
@@ -106,6 +91,10 @@
     <Property Name="ItemID" Type="Int32" Nullable="false" />
     <Property Name="SellerID" Type="Int32" Nullable="false" />
     <Property Name="OrdererID" Type="Int32" Nullable="false" />
+    <Property Name="SellerCheckFlag" Type="Boolean" Nullable="false" />
+    <Property Name="OrdererCheckFlag" Type="Boolean" Nullable="false" />
+    <Property Name="IsDownloading" Type="Boolean" Nullable="false" />
+    <Property Name="IsAccepting" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityContainer Name="cotodamaEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
@@ -117,6 +106,7 @@
     <EntitySet Name="T_Sample" EntityType="cotodamaModel.T_Sample" />
     <EntitySet Name="T_QuestionOfItem" EntityType="cotodamaModel.T_QuestionOfItem" />
     <EntitySet Name="T_QuestionOfOrder" EntityType="cotodamaModel.T_QuestionOfOrder" />
+    <EntitySet Name="T_Sale" EntityType="cotodamaModel.T_Sale" />
   </EntityContainer>
   <EntityType Name="T_Sample">
     <Key>
@@ -156,5 +146,22 @@
     <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="SellerID" Type="Int32" Nullable="false" />
     <Property Name="OrdererID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Sale">
+    <Key>
+      <PropertyRef Name="SaleID" />
+    </Key>
+    <Property Name="SaleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="OrdererID" Type="Int32" Nullable="false" />
+    <Property Name="SellerID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TalentName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TotalPrice" Type="Int32" Nullable="false" />
+    <Property Name="OrderLengthTime" Type="Int32" Nullable="false" />
+    <Property Name="OrderFreeTextArea" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TalentRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

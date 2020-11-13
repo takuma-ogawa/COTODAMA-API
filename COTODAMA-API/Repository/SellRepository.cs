@@ -15,24 +15,34 @@ namespace COTODAMA_API.Repository
 
         private cotodamaEntities db = new cotodamaEntities();
 
-        public V_Sell GetListing(int ItemID)
+        public V_Sell GetListing(int MemberID)
         {
-
-            var questionOfItem = db.T_QuestionOfItem.Where(r => r.ItemID == ItemID).OrderBy(r=> r.SortID);
-
-            List<string> Question = new List<string>();
-
-            foreach(var i in questionOfItem)
+            try
             {
-                Question.Add(i.QuestionName);
+                int ItemID = db.M_Item.Where(r => r.MemberID == MemberID).Single().ItemID;
+
+                var questionOfItem = db.T_QuestionOfItem.Where(r => r.ItemID == ItemID).OrderBy(r => r.SortID);
+
+                List<string> Question = new List<string>();
+
+                foreach (var i in questionOfItem)
+                {
+                    Question.Add(i.QuestionName);
+                }
+
+                return new V_Sell
+                {
+                    Item = db.M_Item.Find(ItemID),
+                    Question = Question
+
+                };
+
             }
-
-            return new V_Sell
+            catch
             {
-                Item = db.M_Item.Find(ItemID),
-                Question = Question
+                return null;
 
-            };
+            }
 
 
         }

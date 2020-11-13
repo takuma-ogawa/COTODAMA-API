@@ -16,14 +16,14 @@ namespace COTODAMA_API.Controllers
     {
 
         [HttpGet]
-        public V_Sell GetListing(int ItemID)
+        public V_Sell GetListing(int MemberID)
         {
-            return new SellRepository().GetListing(ItemID);
+            return new SellRepository().GetListing(MemberID);
 
         }
 
 
-        [HttpPost]
+        [NonAction]
         public bool RegisterListing([FromBody] V_Sell sell)
         {
             return new SellService().RegisterListing(sell);
