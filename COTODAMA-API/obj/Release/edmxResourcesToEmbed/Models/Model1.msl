@@ -68,7 +68,6 @@
       <EntityTypeMapping TypeName="cotodamaModel.M_Category">
         <MappingFragment StoreEntitySet="M_Category">
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
           <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
           <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
@@ -116,35 +115,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="T_QuestionOfItem">
-      <EntityTypeMapping TypeName="cotodamaModel.T_QuestionOfItem">
-        <MappingFragment StoreEntitySet="T_QuestionOfItem">
-          <ScalarProperty Name="SortID" ColumnName="SortID" />
-          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
-          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
-          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-          <ScalarProperty Name="QuestionName" ColumnName="QuestionName" />
-          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="T_QuestionOfOrder">
-      <EntityTypeMapping TypeName="cotodamaModel.T_QuestionOfOrder">
-        <MappingFragment StoreEntitySet="T_QuestionOfOrder">
-          <ScalarProperty Name="OrdererID" ColumnName="OrdererID" />
-          <ScalarProperty Name="SellerID" ColumnName="SellerID" />
-          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
-          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
-          <ScalarProperty Name="SortID" ColumnName="SortID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-          <ScalarProperty Name="AnswerName" ColumnName="AnswerName" />
-          <ScalarProperty Name="QuestionName" ColumnName="QuestionName" />
-          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="T_Sale">
       <EntityTypeMapping TypeName="cotodamaModel.T_Sale">
         <MappingFragment StoreEntitySet="T_Sale">
@@ -160,6 +130,17 @@
           <ScalarProperty Name="ItemID" ColumnName="ItemID" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Situation">
+      <EntityTypeMapping TypeName="cotodamaModel.M_Situation">
+        <MappingFragment StoreEntitySet="M_Situation">
+          <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+          <ScalarProperty Name="RegisterDateTime" ColumnName="RegisterDateTime" />
+          <ScalarProperty Name="SortID" ColumnName="SortID" />
+          <ScalarProperty Name="SituationName" ColumnName="SituationName" />
+          <ScalarProperty Name="SituationID" ColumnName="SituationID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

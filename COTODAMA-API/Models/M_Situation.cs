@@ -12,17 +12,12 @@ namespace COTODAMA_API.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class T_QuestionOfOrder
+    public partial class M_Situation
     {
-        public int QuestionID { get; set; }
-        public string QuestionName { get; set; }
-        public string AnswerName { get; set; }
-        public int ItemID { get; set; }
-        public int OrderID { get; set; }
+        public int SituationID { get; set; }
+        public string SituationName { get; set; }
         public int SortID { get; set; }
         public System.DateTime RegisterDateTime { get; set; }
         public System.DateTime EditDateTime { get; set; }
-        public int SellerID { get; set; }
-        public int OrdererID { get; set; }
     }
 }

@@ -62,13 +62,12 @@
   </EntityType>
   <EntityType Name="M_Category">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="CategoryID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="T_Order">
     <Key>
@@ -105,9 +104,8 @@
     <EntitySet Name="M_Category" EntityType="Self.M_Category" />
     <EntitySet Name="T_Order" EntityType="Self.T_Order" />
     <EntitySet Name="T_Sample" EntityType="cotodamaModel.T_Sample" />
-    <EntitySet Name="T_QuestionOfItem" EntityType="cotodamaModel.T_QuestionOfItem" />
-    <EntitySet Name="T_QuestionOfOrder" EntityType="cotodamaModel.T_QuestionOfOrder" />
     <EntitySet Name="T_Sale" EntityType="cotodamaModel.T_Sale" />
+    <EntitySet Name="M_Situation" EntityType="cotodamaModel.M_Situation" />
   </EntityContainer>
   <EntityType Name="T_Sample">
     <Key>
@@ -120,33 +118,6 @@
     <Property Name="SampleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="T_QuestionOfItem">
-    <Key>
-      <PropertyRef Name="QuestionID" />
-    </Key>
-    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="QuestionName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ItemID" Type="Int32" Nullable="false" />
-    <Property Name="MemberID" Type="Int32" Nullable="false" />
-    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="SortID" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="T_QuestionOfOrder">
-    <Key>
-      <PropertyRef Name="QuestionID" />
-    </Key>
-    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="QuestionName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="AnswerName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ItemID" Type="Int32" Nullable="false" />
-    <Property Name="OrderID" Type="Int32" Nullable="false" />
-    <Property Name="SortID" Type="Int32" Nullable="false" />
-    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="SellerID" Type="Int32" Nullable="false" />
-    <Property Name="OrdererID" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="T_Sale">
     <Key>
@@ -164,5 +135,15 @@
     <Property Name="OrderFreeTextArea" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="UserRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="TalentRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="M_Situation">
+    <Key>
+      <PropertyRef Name="SituationID" />
+    </Key>
+    <Property Name="SituationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SituationName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SortID" Type="Int32" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
 </Schema>

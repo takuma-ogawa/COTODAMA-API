@@ -11,6 +11,26 @@ namespace COTODAMA_API.Repository
 {
     public class ItemRepository
     {
+        private cotodamaEntities db = new cotodamaEntities();
+        public M_Item GetItem(int MemberID)
+        {
+            try
+            {
+                int ItemID = db.M_Item.Where(r => r.MemberID == MemberID).Single().ItemID;
+
+
+                return db.M_Item.Find(ItemID);
+
+
+            }
+            catch
+            {
+                return null;
+
+            }
+
+
+        }
         //会員登録時のアイテム作成
         public M_Item AddByMember(M_Member member)
         {
@@ -30,6 +50,8 @@ namespace COTODAMA_API.Repository
 
             return item;
         }
+
+
     }
 
     public static class ItemRepositoryStatic

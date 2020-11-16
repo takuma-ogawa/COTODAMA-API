@@ -22,11 +22,21 @@ namespace COTODAMA_API.Service
         {
             try
             {
-                db.M_Member.Add(member.Add());
 
-                db.SaveChanges();
+                if (!this.OverlapEmail(member.MemberEmail))
+                {
+                    db.M_Member.Add(member.Add());
 
-                return true;
+                    db.SaveChanges();
+
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+
+                }
 
             }
             catch
@@ -60,6 +70,22 @@ namespace COTODAMA_API.Service
                 return false;
             }
 
+        }
+
+        public Boolean OverlapEmail(string email)
+        {
+            var members = db.M_Member;
+
+            bool is_exsist = false;
+            foreach(var i in members)
+            {
+                if(i.MemberEmail == email)
+                {
+                    is_exsist = true;
+                }
+            }
+
+            return is_exsist;
         }
 
     }

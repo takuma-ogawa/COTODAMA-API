@@ -12,10 +12,9 @@
   </EntityType>
   <EntityType Name="M_Category">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="CategoryID" />
     </Key>
-    <Property Name="CategoryID" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="None" Nullable="false" />
     <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
     <Property Name="EditDateTime" Type="datetime" Nullable="false" />
@@ -60,6 +59,18 @@
     <Property Name="ItemID" Type="int" Nullable="false" />
     <Property Name="IsSeller" Type="bit" Nullable="false" />
   </EntityType>
+  <!--生成中に見つかったエラー:
+警告 6002: テーブル/ビュー 'cotodama.dbo.M_Situation' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。-->
+  <EntityType Name="M_Situation">
+    <Key>
+      <PropertyRef Name="SituationID" />
+    </Key>
+    <Property Name="SituationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SituationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SortID" Type="int" Nullable="false" />
+    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -97,33 +108,6 @@
     <Property Name="EditDateTime" Type="datetime" Nullable="false" />
     <Property Name="CardToken" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="T_QuestionOfItem">
-    <Key>
-      <PropertyRef Name="QuestionID" />
-    </Key>
-    <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="QuestionName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="SortID" Type="int" Nullable="false" />
-    <Property Name="ItemID" Type="int" Nullable="false" />
-    <Property Name="MemberID" Type="int" Nullable="false" />
-    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
-    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="T_QuestionOfOrder">
-    <Key>
-      <PropertyRef Name="QuestionID" />
-    </Key>
-    <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="QuestionName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="AnswerName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ItemID" Type="int" Nullable="false" />
-    <Property Name="OrderID" Type="int" Nullable="false" />
-    <Property Name="SellerID" Type="int" Nullable="false" />
-    <Property Name="OrdererID" Type="int" Nullable="false" />
-    <Property Name="SortID" Type="int" Nullable="false" />
-    <Property Name="RegisterDateTime" Type="datetime" Nullable="false" />
-    <Property Name="EditDateTime" Type="datetime" Nullable="false" />
-  </EntityType>
   <EntityType Name="T_Sale">
     <Key>
       <PropertyRef Name="SaleID" />
@@ -160,9 +144,16 @@
     <EntitySet Name="M_Member" EntityType="Self.M_Member" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="T_QuestionOfItem" EntityType="Self.T_QuestionOfItem" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="T_QuestionOfOrder" EntityType="Self.T_QuestionOfOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Sale" EntityType="Self.T_Sale" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Sample" EntityType="Self.T_Sample" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Situation" EntityType="Self.M_Situation" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_Situation].[SituationID] AS [SituationID], 
+    [M_Situation].[SituationName] AS [SituationName], 
+    [M_Situation].[SortID] AS [SortID], 
+    [M_Situation].[RegisterDateTime] AS [RegisterDateTime], 
+    [M_Situation].[EditDateTime] AS [EditDateTime]
+    FROM [dbo].[M_Situation] AS [M_Situation]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

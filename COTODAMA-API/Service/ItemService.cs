@@ -35,8 +35,28 @@ namespace COTODAMA_API.Service
             }
 
         }
-        
-      
-        
+
+
+        public bool EditItem(M_Item edit)
+        {
+
+            try
+            {
+                var item = db.M_Item.Find(edit.ItemID).EditByItemClass(edit);
+
+                db.Entry(item).State = EntityState.Modified;
+
+                db.SaveChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+
+        }
+
     }
 }

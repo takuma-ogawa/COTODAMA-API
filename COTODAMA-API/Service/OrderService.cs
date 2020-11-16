@@ -29,15 +29,6 @@ namespace COTODAMA_API.Service
 
                 db.SaveChanges();
 
-                for (var i = 0; i < v_order.Question.Count(); i++)
-                {
-                    var question = new QuestionOfOrderRepository().AddByName(v_order.Question[i], order,i);
-
-                    db.T_QuestionOfOrder.Add(question);
-                }
-
-                db.SaveChanges();
-
                 return true;
 
             }

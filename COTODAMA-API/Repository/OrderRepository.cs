@@ -14,6 +14,16 @@ namespace COTODAMA_API.Repository
     {
         private cotodamaEntities db = new cotodamaEntities();
 
+        public V_Order GetOrder()
+        {
+
+            return new V_Order
+            {
+                Order = new T_Order(),
+                Situation = db.M_Situation.OrderBy(r => r.SortID),
+            };
+        }
+
     }
 
     public static class OrderRepositoryStatic
