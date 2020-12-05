@@ -28,6 +28,10 @@ namespace COTODAMA_API.Repository
             member.RegisterDateTime = DateTime.UtcNow.AddHours(9);
             member.EditDateTime = DateTime.UtcNow.AddHours(9);
 
+            //初期は出品者じゃないとして扱う
+            member.IsSeller = false;
+            member.IconFilepath = "";
+
             return member;
         }
 

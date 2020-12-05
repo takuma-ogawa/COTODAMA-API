@@ -28,9 +28,21 @@ namespace COTODAMA_API.Controllers
         public Boolean RegisterMember([FromBody] M_Member member)
         {
             //アイテムも自動登録
-        
-            return new MemberService().RegisterMember(member) && new ItemService().RegisterItemByMember(member);
 
+            int? MemberID = new MemberService().RegisterMember(member);
+
+            if (MemberID != null)
+            {
+                return new ItemService().RegisterItemByMember(member,(int)MemberID);
+            }
+            else
+            {
+                return false;
+            }
+
+
+
+           
 
         }
 

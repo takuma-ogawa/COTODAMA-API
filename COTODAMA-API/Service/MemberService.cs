@@ -18,10 +18,8 @@ namespace COTODAMA_API.Service
         private cotodamaEntities db = new cotodamaEntities();
 
 
-        public Boolean RegisterMember(M_Member member)
+        public int? RegisterMember(M_Member member)
         {
-            try
-            {
 
                 if (!this.OverlapEmail(member.MemberEmail))
                 {
@@ -29,20 +27,15 @@ namespace COTODAMA_API.Service
 
                     db.SaveChanges();
 
-                    return true;
+                    return member.MemberID;
 
                 }
                 else
                 {
-                    return false;
+                    return null;
 
                 }
 
-            }
-            catch
-            {
-                return false;
-            }
  
         }
 

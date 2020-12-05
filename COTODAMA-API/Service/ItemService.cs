@@ -17,12 +17,20 @@ namespace COTODAMA_API.Service
         private cotodamaEntities db = new cotodamaEntities();
 
         //会員登録をするときのアイテムの登録、とりあえず適当な値を入れておく
-        public Boolean RegisterItemByMember(M_Member member)
+        public Boolean RegisterItemByMember(M_Member member,int MemberID)
         {
             try
             {
 
-                db.M_Item.Add(new ItemRepository().AddByMember(member));
+                var item = new ItemRepository().AddByMember(member);
+                db.M_Item.Add(item);
+
+                db.SaveChanges();
+
+                var editMember = db.M_Member.Find(MemberID);
+                editMember.ItemID = item.ItemID;
+
+                db.Entry(editMember).State = EntityState.Modified;
 
                 db.SaveChanges();
 
